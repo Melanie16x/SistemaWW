@@ -79,12 +79,21 @@ const useWeatherData = (city) => {
                     lang: 'es' // Añade el parámetro para obtener descripciones en español
                 }
             });
-            return weatherResponse.data.main.temp; // Retorna la temperatura
+            const { name, main, weather, wind, dt } = weatherResponse.data;
+            return {
+                name,
+                temp: main.temp,
+                description: weather[0].description,
+                humidity: main.humidity,
+                pressure: main.pressure,
+                windSpeed: wind.speed
+            };
         } catch (error) {
             setError(error);
             return null;
         }
     }, []);
+    
 
     // useEffect para cargar datos al iniciar
     useEffect(() => {

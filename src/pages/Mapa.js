@@ -5,7 +5,7 @@ import useWeatherData from '../hooks/useWeatherData';
 import '../styles/Mapa.scss';
 
 const Mapa = () => {
-    const [temperature, setTemperature] = useState(null);
+    const [weatherInfo, setWeatherInfo] = useState(null);
     const [position, setPosition] = useState([0, 0]);
 
     const { fetchTemperatureByCoords } = useWeatherData();
@@ -16,16 +16,16 @@ const Mapa = () => {
                 const { lat, lng } = event.latlng;
                 console.log(`Lat: ${lat}, Lng: ${lng}`);
                 setPosition([lat, lng]);
-                const temp = await fetchTemperatureByCoords(lat, lng);
-                console.log(`Temperature: ${temp}`);
-                setTemperature(temp);
+                const weatherData = await fetchTemperatureByCoords(lat, lng);
+                console.log(`Weather Data: ${JSON.stringify(weatherData)}`);
+                setWeatherInfo(weatherData);
             },
         });
         return null;
     };
 
     return (
-        <div className="map-container">
+        <div className="map-mapa">
             <MapContainer
                 center={[0, 0]}
                 zoom={3}
@@ -33,13 +33,17 @@ const Mapa = () => {
             >
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
                 <MapEvents />
             </MapContainer>
-            {temperature !== null && (
+            {weatherInfo && (
                 <div className="temperature-card">
-                    Temperatura: {temperature}°C
+                    <h3>{weatherInfo.name}</h3>
+                    <p>Temperatura: {weatherInfo.temp}°C</p>
+                    <p>Descripción: {weatherInfo.description}</p>
+                    <p>Humedad: {weatherInfo.humidity}%</p>
+                    <p>Presión: {weatherInfo.pressure} hPa</p>
+                    <p>Velocidad del viento: {weatherInfo.windSpeed} m/s</p>
                 </div>
             )}
         </div>

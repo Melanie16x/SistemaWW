@@ -1,10 +1,14 @@
 import React from 'react';
-import useWeatherData from '../hooks/useWeatherData';
+import { useNavigate } from 'react-router-dom';
 import { Row, Col, Card, CardBody, CardTitle, CardText } from 'reactstrap';
 import { useTranslation } from 'react-i18next';
+import { MapContainer, TileLayer } from 'react-leaflet';
+import useWeatherData from '../hooks/useWeatherData'
+import 'leaflet/dist/leaflet.css';
 import "../styles/Home.scss";
 
 const Home = ({ searchQuery }) => {
+    const navigate = useNavigate();
     const { weatherData, forecastData, loading, error } = useWeatherData(searchQuery);
     const { t } = useTranslation();
 
@@ -20,12 +24,18 @@ const Home = ({ searchQuery }) => {
         return <div>No hay datos disponibles</div>;
     }
 
+    const position = [weatherData.coord.lat, weatherData.coord.lon];
+
+    const handleMapClick = () => {
+        navigate('/mapa');
+    };
+
     return (
         <div className="weather-dashboard">
             <div className="weather-dashboard-content">
                 <h1 className="city-name">{searchQuery}</h1>
                 <Row className="justify-content-start">
-                    <Col xs="12" md="8" className='mb-4'>
+                    <Col xs="12" md="6" className='mb-4'>
                         <Card className='weather-card'>
                             <CardBody>
                                 <CardTitle tag="h5" className="temperature-title">Temperatura Actual</CardTitle>
@@ -41,6 +51,15 @@ const Home = ({ searchQuery }) => {
                                 <CardText>Punto de Rocío: {calculateDewPoint(weatherData.main.temp, weatherData.main.humidity)}°C</CardText>
                             </CardBody>
                         </Card>
+                    </Col>
+                    <Col xs="12" md="6" className='mb-4'>
+                        <div className="map-home" onClick={handleMapClick}>
+                            <MapContainer center={position} zoom={4} scrollWheelZoom={false} style={{ height: "100%", width: "100%" }}>
+                                <TileLayer
+                                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                />
+                            </MapContainer>
+                        </div>
                     </Col>
                 </Row>
                 <Row className="forecast-section">
@@ -64,7 +83,7 @@ const Home = ({ searchQuery }) => {
             </div>
         </div>
     );
-}
+};
 
 const calculateDewPoint = (temperature, humidity) => {
     // Fórmula para calcular el punto de rocío

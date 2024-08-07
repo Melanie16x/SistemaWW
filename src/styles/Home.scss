@@ -5,7 +5,6 @@
     background-color: #032030; /* Azul oscuro */
     color: #ffffff; /* Texto blanco */
     padding: 20px;
-    // margin-left: $expanded-width; /* Asegúrate de que el margen izquierdo sea igual al ancho del sidebar */
 }
 
 .weather-dashboard-content {
@@ -85,6 +84,13 @@
     color: #06D6A0 !important; /* Color acento */
 }
 
+.map-home {
+    height: 100% !important;
+    width: 100% !important;
+    max-width: 600px;
+    margin-left: -100px;
+}
+
 @media (max-width: 767px) {
     .weather-card {
         margin-bottom: 20px;
@@ -98,5 +104,8 @@
     }
     .forecast-day-card {
         margin-bottom: 10px;
+    }
+    .map-container {
+        max-width: 100%;
     }
 }
