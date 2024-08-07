@@ -1,0 +1,102 @@
+.navbar {
+  background-color: #032030 !important; /* Azul oscuro */
+  padding: 10px 20px;
+  border-bottom: 2px solid #06D6A0; /* Color acento */
+  display: flex; /* Utiliza flexbox */
+  align-items: center; /* Centra los elementos verticalmente */
+  position: relative;
+}
+
+.navbar .navbar-brand {
+  color: #06D6A0; /* Color acento */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .navbar-brand:hover {
+  color: #ffffff; /* Texto blanco al pasar el ratón */
+}
+
+.navbar .navbar-nav {
+  margin-left: auto;
+  display: flex; /* Utiliza flexbox */
+  align-items: center; /* Centra los elementos verticalmente */
+}
+
+.nav-item-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container {
+  display: flex; /* Utiliza flexbox */
+  align-items: center; /* Centra el buscador verticalmente */
+  margin-right: 1rem; /* Espacio entre el buscador y el nombre del usuario */
+}
+
+.search-container input {
+  background-color: #0d1b2a; /* Color de fondo del buscador */
+  border: 1px solid #06D6A0; /* Color del borde del buscador */
+  color: #ffffff; /* Color del texto */
+  margin-right: 0.5rem; /* Espacio entre el input y el botón */
+}
+
+.search-container input::placeholder {
+  color: #ffffff; /* Color del texto del placeholder */
+}
+
+.search-container button {
+  background-color: #06D6A0; /* Color del botón */
+  border: none;
+  color: #ffffff; /* Color del texto */
+}
+
+.sidebar-toggle {
+  color: #ffffff; /* Texto blanco */
+  font-size: 1.5rem;
+  cursor: pointer; /* Cursor de mano */
+  display: flex; /* Utiliza flexbox */
+  align-items: center; /* Centra el ícono verticalmente */
+  margin-right: 1rem; /* Ajusta el espacio a la derecha */
+}
+
+.dropdown-toggle {
+  color: #ffffff !important; /* Asegura que el color sea blanco */
+  font-size: 1.1rem;
+}
+
+.dropdown-menu {
+  background-color: #162447; /* Azul oscuro */
+  border: none;
+}
+
+.dropdown-item {
+  color: #ffffff; /* Texto blanco */
+}
+
+.dropdown-item:hover {
+  background-color: #e94560; /* Color acento al pasar el ratón */
+  color: #ffffff; /* Texto blanco */
+}
+
+.user-dropdown {
+  color: #ffffff !important; /* Asegura que el color sea blanco */
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar .nav-link {
+    font-size: 1rem;
+  }
+
+  .navbar .dropdown-toggle {
+    font-size: 1rem;
+  }
+}

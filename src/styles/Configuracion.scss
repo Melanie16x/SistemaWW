@@ -1,0 +1,40 @@
+.configuracion {
+    padding: 20px;
+    color: #fff;
+    background-color: #032030;
+    min-height: 100vh;
+    overflow: auto;
+  }
+  
+  .title {
+    margin-bottom: 20px;
+    font-size: 27px;
+    font-weight: bold;
+    color: #ffff; /* Color del título */
+}
+
+  .subtitle {
+    font-size: 17px;
+  }
+  
+  .settings-section {
+    margin-bottom: 20px;
+  }
+  
+  .settings-section .subtitle {
+    margin-bottom: 20px;
+  }
+  
+  select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #06D6A0;
+    background-color: #032030;
+    color: #fff;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: #06D6A0;
+  }
+  

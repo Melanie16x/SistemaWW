@@ -1,0 +1,21 @@
+/* Mapa.scss */
+
+.map-container {
+    position: relative;
+    height: calc(100vh - 50px); /* Ajustar altura según el Navbar */
+    width: calc(100vw - 80px); /* Ajustar ancho según el Sidebar */
+}
+
+.temperature-card {
+    position: absolute;
+    top: 20px; /* Ajusta la distancia desde la parte superior del contenedor */
+    right: 20px; /* Ajusta la distancia desde el borde derecho del contenedor */
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    font-size: 16px;
+    font-weight: bold;
+}

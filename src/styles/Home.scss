@@ -1,0 +1,102 @@
+.weather-dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #032030; /* Azul oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 20px;
+    // margin-left: $expanded-width; /* Asegúrate de que el margen izquierdo sea igual al ancho del sidebar */
+}
+
+.weather-dashboard-content {
+    flex: 1; /* Ocupa el espacio restante */
+}
+
+.city-name {
+    text-align: left; /* Mover el nombre de la ciudad a la izquierda */
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #06D6A0; /* Color acento */
+}
+
+.weather-card {
+    background-color: #0d1b2a !important; /* Azul oscuro */
+    border: none;
+    color: #ffffff !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px; /* Achicar el tamaño de la tarjeta */
+    margin-left: 0; /* Alinear a la izquierda */
+}
+
+.weather-card h5 {
+    color: #06D6A0 !important; /* Color acento */
+}
+
+.temperature-title {
+    color: #06D6A0 !important; /* Color acento */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.temperature-value {
+    font-size: 2.5rem; /* Destacar la temperatura actual */
+    font-weight: bold;
+    color: #ffffff !important;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    color: #06D6A0 !important; /* Color acento */
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.weather-card p {
+    margin: 0;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.forecast-section {
+    margin-top: 30px;
+}
+
+.forecast-day-card {
+    background-color: #0d1b2a !important; /* Azul más oscuro */
+    border: none;
+    color: #ffffff !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.forecast-date {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #06D6A0 !important; /* Color acento */
+}
+
+.forecast-temp {
+    font-size: 1.2rem;
+    color: #ffffff !important;
+}
+
+.forecast-desc {
+    font-size: 1rem;
+    color: #06D6A0 !important; /* Color acento */
+}
+
+@media (max-width: 767px) {
+    .weather-card {
+        margin-bottom: 20px;
+        max-width: 100%; /* Ajustar el ancho en dispositivos móviles */
+    }
+    .temperature-value {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 1rem;
+    }
+    .forecast-day-card {
+        margin-bottom: 10px;
+    }
+}

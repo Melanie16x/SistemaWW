@@ -1,0 +1,49 @@
+/* PrevisionHoraria.scss */
+
+.prevision-horaria {
+    padding: 20px;
+    color: #fff;
+    background-color: #032030;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffff; /* Color del título */
+}
+
+.city-name {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #e94560;
+}
+
+.days-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.day-card {
+    background-color: #06D6A0 !important;
+    border: 1px solid #06D6A0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    color: #032030;
+    flex: 1 0 60px;
+}
+
+.day-card.active {
+    background-color: #032030;
+    color: #fff;
+}
+
+.chart-container {
+    margin-top: 20px;
+}

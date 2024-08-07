@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
+$light: #ffffff;
+$gray: #e7e9eb;
+$navbar-height: 52px; // Ajusta según sea necesario
+$collapsed-width: 80px; // Ajusta según sea necesario
+$expanded-width: 250px; // Ajusta según sea necesario
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.navbar {
+  background-color: $light;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid $gray;
+  height: $navbar-height;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.sidebar {
+  height: calc(100vh - $navbar-height);
+  border-right: 1px solid $gray;
+  position: fixed;
+  top: $navbar-height;
+  transition: width 0.3s;
+  left: 0;
+
+  &.collapsed {
+    width: $collapsed-width;
+  }
+
+  &.expanded {
+    width: $expanded-width;
+  }
+}
+
+.flex {
+  display: flex;
+  height: 100vh; // Cambiado para ocupar todo el alto de la pantalla
+  width: 100%;
+  position: relative; // Asegura que el contenido se alinee correctamente
+  margin-top: 0; // Elimina el margen superior
+}
+
+.content {
+  flex-grow: 1;
+  overflow-y: auto;
+  height: 100vh; // Ocupa todo el alto de la pantalla
+  margin-left: 0; // Elimina margen izquierdo
+  padding: 0; // Asegúrate de que no haya relleno
+  transition: margin-left 0.3s;
+
+  &.expanded {
+    margin-left: $expanded-width; // Ajusta según el ancho del sidebar expandido
+  }
+
+  &.collapsed {
+    margin-left: $collapsed-width; // Ajusta según el ancho del sidebar colapsado
+  }
+
+  // Asegúrate de que cualquier hijo dentro de content no tenga márgenes o relleno
+  > * {
+    margin: 0;
+    padding: 0;
+  }
+}

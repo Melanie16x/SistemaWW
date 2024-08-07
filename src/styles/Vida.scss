@@ -1,0 +1,39 @@
+.vida {
+    padding: 20px;
+    color: #fff;
+    background-color: #032030;
+    min-height: 100vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffff; /* Color del título */
+}
+
+.advice-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.advice-item {
+    background-color: #06D6A0;
+    border: 1px solid #06D6A0;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #032030;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.advice-item strong {
+    font-weight: bold;
+}

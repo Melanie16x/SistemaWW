@@ -1,0 +1,70 @@
+.asistente {
+    padding: 20px;
+    color: #fff;
+    background-color: #032030;
+    min-height: 100vh; /* Asegúrate de que ocupe al menos la altura completa de la vista */
+    overflow: auto; /* Para asegurarse de que el contenido sea desplazable si es necesario */
+  }
+  
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(95vh - 60px); /* Ajusta la altura si tienes un navbar */
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #06D6A0;
+    border-radius: 10px;
+    background-color: #032030;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .message.bot {
+    background-color: #06D6A0;
+    color: #032030;
+    text-align: left;
+  }
+  
+  .message.user {
+    background-color: #1E1E1E;
+    color: #fff;
+    text-align: right;
+    align-self: flex-end;
+  }
+  
+  .input-container {
+    display: flex;
+    border-top: 1px solid #06D6A0;
+    padding: 10px;
+  }
+  
+  input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #06D6A0;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  

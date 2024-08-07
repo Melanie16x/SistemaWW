@@ -1,0 +1,53 @@
+.favoritos {
+    padding: 20px;
+    color: #fff;
+    background-color: #032030;
+    min-height: 100vh; /* Asegúrate de que ocupe al menos la altura completa de la vista */
+    overflow: auto; /* Para asegurarse de que el contenido sea desplazable si es necesario */
+  }
+  
+  .title {
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffff; /* Color del título */
+}
+  
+  .favorites-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .favorite-card {
+    background-color: #06D6A0;
+    border: 1px solid #06D6A0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    color: #032030;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .add-favorite-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #06D6A0;
+    border: 1px solid #06D6A0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #032030;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .add-favorite-card p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  

@@ -1,0 +1,76 @@
+/* PrevisionMensual.scss */
+
+.prevision-mensual {
+    padding: 20px;
+    color: #fff;
+    background-color: #032030;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffff; /* Color del título */
+}
+
+.month-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.month-card {
+    background-color: #06D6A0;
+    border: 1px solid #06D6A0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    color: #032030;
+    flex: 1 0 60px;
+}
+
+.month-card.active {
+    background-color: #032030;
+    color: #fff;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    max-width: 100%;
+}
+
+.day-card {
+    background-color: #032030 !important;
+    border: 1px solid #06D6A0;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+    height: 60px;
+    box-sizing: border-box;
+}
+
+.empty-day {
+    background-color: transparent;
+}
+
+.day-number {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.temperature {
+    font-size: 14px;
+}
